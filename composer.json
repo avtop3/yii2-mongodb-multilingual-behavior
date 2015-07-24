@@ -1,18 +1,18 @@
 {
-    "name": "avtop/yii2-mongodb-multilingual-behavior",
+    "name": "avtop3/yii2-mongodb-multilingual-behavior",
     "description": "@",
     "type": "yii2-extension",
     "keywords": ["yii2", "extension", " yii2-mongodb-multilingual-behavior", " behavior", " multilingual", " multilanguage", " i18", "mongo", "mongodb"],
     "license": "BSD-4-Clause",
     "authors": [
         {
-            "name": "ABTOP",
+            "name": "avtop3",
             "email": "avtop25495@gmail.com"
         }
     ],
     "autoload": {
         "psr-4": {
-            "ABTOP\\multilingual\\": "src"
+            "avtop3\\multilingual\\": "src"
         }
     },
     "require": {

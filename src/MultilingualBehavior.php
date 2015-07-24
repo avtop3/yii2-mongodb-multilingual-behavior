@@ -1,6 +1,6 @@
 <?php
 
-namespace ABTOP\maongodb_multilingual;
+namespace avtop3\maongodb_multilingual;
 
 use Yii;
 use yii\base\Behavior;
