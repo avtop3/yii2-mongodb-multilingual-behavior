@@ -1,17 +1,11 @@
 <?php
 
-namespace omgdef\multilingual;
+namespace ABTOP\multilingual;
 
 use Yii;
 use yii\base\Behavior;
-use yii\base\UnknownPropertyException;
-use yii\base\InvalidConfigException;
-//use yii\db\ActiveQuery;
-//use yii\db\ActiveRecord;
 use yii\mongodb\ActiveQuery;
 use yii\mongodb\ActiveRecord;
-use yii\helpers\Inflector;
-use yii\validators\Validator;
 
 class MultilingualBehavior extends Behavior {
 
@@ -121,13 +115,8 @@ class MultilingualBehavior extends Behavior {
                         }
                     }
                 }
-                
-                
             }
-//            echo array_key_exists(\Yii::$app->language, $multilangAttr); exit;
         }
-        
-//        var_dump($this->owner);
     }
 
 
