@@ -12,7 +12,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "avtop\\mongodb_multilingual\\": "src"
+            "avtop\\multilingual\\": "src"
         }
     },
     "require": {
