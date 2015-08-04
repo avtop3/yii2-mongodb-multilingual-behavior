@@ -2,9 +2,7 @@
 
 namespace avtop\multilingual;
 
-use Yii;
 use yii\base\Behavior;
-use yii\mongodb\ActiveQuery;
 use yii\mongodb\ActiveRecord;
 
 class MultilingualBehavior extends Behavior {
