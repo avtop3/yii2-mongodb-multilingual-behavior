@@ -47,7 +47,7 @@ class MultilingualBehavior extends Behavior {
                         if (isset(\Yii::$app->sourceLanguage) && isset($wildProperty[\Yii::$app->sourceLanguage])) {
                             $this->owner->$atribute = $wildProperty[\Yii::$app->sourceLanguage];
                         } else {
-                            $this->owner->$atribute = 'Translation not found !!!';
+                            $this->owner->$atribute = reset($wildProperty);
                         }
                     }
                 }else{
