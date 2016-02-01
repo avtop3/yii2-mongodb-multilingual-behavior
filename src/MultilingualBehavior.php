@@ -19,7 +19,7 @@ class MultilingualBehavior extends Behavior {
      * For associative arrays, only the keys will be used.
      * @var array
      */
-    public $sufix = 'Lang';
+    public $suffix = 'Lang';
 
     /**
      * @inheritdoc
@@ -37,7 +37,7 @@ class MultilingualBehavior extends Behavior {
 
         if (is_array($this->attributes)) {
             foreach ($this->attributes as $atribute) { // title, content
-                $wildProperty = $this->owner->{$atribute . $this->sufix}; // Obj->titleLang[]
+                $wildProperty = $this->owner->{$atribute . $this->suffix}; // Obj->titleLang[]
                  
                 if (is_array($wildProperty)) {
                     if (array_key_exists(\Yii::$app->language, $wildProperty)) {
