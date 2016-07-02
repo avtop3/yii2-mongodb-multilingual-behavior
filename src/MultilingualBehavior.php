@@ -5,7 +5,8 @@ namespace avtop\multilingual;
 use yii\base\Behavior;
 use yii\mongodb\ActiveRecord;
 
-class MultilingualBehavior extends Behavior {
+class MultilingualBehavior extends Behavior
+{
 
     /**
      * Multilingual attributes
@@ -24,7 +25,8 @@ class MultilingualBehavior extends Behavior {
     /**
      * @inheritdoc
      */
-    public function events() {
+    public function events()
+    {
         return [
             ActiveRecord::EVENT_AFTER_FIND => 'afterFindBehavior',
         ];
@@ -33,16 +35,18 @@ class MultilingualBehavior extends Behavior {
     /**
      * Handle 'afterFind' event of the owner.
      */
-    public function afterFindBehavior() {
+    public function afterFindBehavior()
+    {
 
+        $language = explode('-', \Yii::$app->language)[0];
         if (is_array($this->attributes)) {
             foreach ($this->attributes as $atribute) { // title, content
                 $wildProperty = $this->owner->{$atribute . $this->suffix}; // Obj->titleLang[]
-                 
+
                 if (is_array($wildProperty)) {
-                    if (array_key_exists(\Yii::$app->language, $wildProperty)) {
-                        $this->owner->$atribute = $wildProperty[\Yii::$app->language];
-                       
+                    if (array_key_exists($language, $wildProperty)) {
+                        $this->owner->$atribute = $wildProperty[$language];
+
                     } else {
                         if (isset(\Yii::$app->sourceLanguage) && isset($wildProperty[\Yii::$app->sourceLanguage])) {
                             $this->owner->$atribute = $wildProperty[\Yii::$app->sourceLanguage];
@@ -50,7 +54,7 @@ class MultilingualBehavior extends Behavior {
                             $this->owner->$atribute = reset($wildProperty);
                         }
                     }
-                }else{
+                } else {
                     $this->owner->$atribute = $wildProperty;
                 }
             }
